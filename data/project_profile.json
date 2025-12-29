@@ -1,0 +1,27 @@
+{
+  "name": "Cloud-Based Analytics Dashboard for Small Retail Businesses",
+  "budget_inr_per_month": 15000,
+  "description": "Collects sales data from multiple stores and generates weekly and monthly performance reports.",
+  "tech_stack": {
+    "frontend": "React",
+    "backend": "Node.js with REST API architecture",
+    "database": {
+      "primary": "PostgreSQL",
+      "secondary": "Object storage for report files and exported CSVs",
+      "cache": "Redis for frequently accessed analytics data"
+    },
+    "hosting": "AWS",
+    "infrastructure": {
+      "backend": "EC2 instances",
+      "load_balancer": "Application load balancer",
+      "monitoring": "CloudWatch",
+      "cdn": "CDN for static frontend assets"
+    }
+  },
+  "non_functional_requirements": [
+    "Scalability to handle traffic spikes",
+    "High availability",
+    "Cost efficiency",
+    "Basic security best practices"
+  ]
+}

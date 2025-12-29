@@ -1,0 +1,18 @@
+I want to build a cloud-based analytics dashboard for small retail businesses.
+The platform will collect sales data from multiple stores and generate weekly
+and monthly performance reports.
+
+The frontend will be built using React, and the backend will use Node.js with
+a REST API architecture. PostgreSQL will be used as the primary database for
+transactional data, and object storage will be used to store report files and
+exported CSVs. Redis will be used for caching frequently accessed analytics data.
+
+The application will be hosted on AWS. EC2 instances will be used for backend
+services, and an application load balancer will be placed in front of the API.
+CloudWatch will be used for monitoring and logging. A CDN will be used to serve
+static frontend assets.
+
+Non-functional requirements include scalability to handle traffic spikes,
+high availability, cost efficiency, and basic security best practices.
+
+My monthly cloud budget is 5000 INR.

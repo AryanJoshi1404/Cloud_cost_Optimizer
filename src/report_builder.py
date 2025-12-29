@@ -1,6 +1,6 @@
 import json
 from src.cost_analyzer import analyze_costs
-from src.recommender import generate_recommendations
+from src.cost_optimizer import generate_recommendations
 
 def build_report():
     analysis = analyze_costs()
