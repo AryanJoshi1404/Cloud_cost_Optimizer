@@ -15,4 +15,4 @@ static frontend assets.
 Non-functional requirements include scalability to handle traffic spikes,
 high availability, cost efficiency, and basic security best practices.
 
-My monthly cloud budget is 5000 INR.
+My monthly cloud budget is 15000 INR.

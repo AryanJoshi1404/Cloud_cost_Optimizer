@@ -1,0 +1,94 @@
+{
+  "project_name": "Cloud-Based Analytics Dashboard for Small Retail Businesses",
+  "analysis": {
+    "total_monthly_cost": 8400,
+    "budget": 15000,
+    "budget_variance": -6600,
+    "service_costs": {
+      "EC2": 1500,
+      "S3": 1250,
+      "CloudWatch": 250,
+      "API Gateway": 1000,
+      "RDS": 1000,
+      "Lambda": 500,
+      "CloudFront": 2000,
+      "Route 53": 100,
+      "Elastic Beanstalk": 500,
+      "CloudTrail": 200,
+      "CloudFormation": 100
+    },
+    "is_over_budget": false
+  },
+  "recommendations": [
+    {
+      "service": "EC2",
+      "cost": 1500,
+      "savings": 300,
+      "action": "Right-size EC2 instances to reduce costs"
+    },
+    {
+      "service": "S3",
+      "cost": 1250,
+      "savings": 250,
+      "action": "Optimize S3 storage and reduce storage costs"
+    },
+    {
+      "service": "CloudWatch",
+      "cost": 250,
+      "savings": 50,
+      "action": "Disable unnecessary CloudWatch metrics"
+    },
+    {
+      "service": "API Gateway",
+      "cost": 1000,
+      "savings": 200,
+      "action": "Optimize API Gateway usage and reduce costs"
+    },
+    {
+      "service": "RDS",
+      "cost": 1000,
+      "savings": 200,
+      "action": "Right-size RDS instances and reduce costs"
+    },
+    {
+      "service": "Lambda",
+      "cost": 500,
+      "savings": 100,
+      "action": "Optimize Lambda function usage and reduce costs"
+    },
+    {
+      "service": "CloudFront",
+      "cost": 2000,
+      "savings": 400,
+      "action": "Optimize CloudFront distribution and reduce costs"
+    },
+    {
+      "service": "Route 53",
+      "cost": 100,
+      "savings": 20,
+      "action": "Optimize Route 53 usage and reduce costs"
+    },
+    {
+      "service": "Elastic Beanstalk",
+      "cost": 500,
+      "savings": 100,
+      "action": "Optimize Elastic Beanstalk environment and reduce costs"
+    },
+    {
+      "service": "CloudTrail",
+      "cost": 200,
+      "savings": 40,
+      "action": "Disable unnecessary CloudTrail logs"
+    },
+    {
+      "service": "CloudFormation",
+      "cost": 100,
+      "savings": 20,
+      "action": "Optimize CloudFormation usage and reduce costs"
+    }
+  ],
+  "summary": {
+    "total_potential_savings": 1680,
+    "recommendations_count": 11
+  }
+}

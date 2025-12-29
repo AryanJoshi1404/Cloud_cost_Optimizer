@@ -1,17 +1,37 @@
-import json
 from src.llm_client import call_llm
+import json
 
-def generate_recommendations(analysis):
+
+def generate_recommendations(analysis_result):
+    analysis = analysis_result["analysis"]
+
     prompt = f"""
 You are a cloud cost optimization expert.
 
-RULES:
-- Output ONLY valid JSON
-- 6-10 recommendations
-- Include AWS, Azure, GCP, open-source/free-tier options
+STRICT RULES:
+- Output ONLY a valid JSON array
+- NO explanation text
+- NO markdown
+- NO comments
+- Each item must be an object
 
-Analysis:
-{json.dumps(analysis)}
+Generate 6 to 10 cost optimization recommendations.
+
+Each recommendation MUST include:
+service, cost, savings, action
+
+Cost analysis:
+{json.dumps(analysis, indent=2)}
 """
 
-    return call_llm(prompt)
+    recommendations = call_llm(prompt)
+
+    # ---- Validation ----
+    if not isinstance(recommendations, list):
+        raise ValueError("Recommendations must be a JSON array")
+
+    for r in recommendations:
+        if not isinstance(r, dict):
+            raise ValueError("Each recommendation must be a JSON object")
+
+    return recommendations

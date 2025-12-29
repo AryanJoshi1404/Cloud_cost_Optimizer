@@ -4,6 +4,8 @@ from src.profile_extractor import extract_project_profile
 from src.bill_generator import generate_billing
 from src.report_builder import build_report
 
+REPORT_PATH = "data/cost_optimization_report.json"
+
 def get_multiline_input():
     print("\nEnter project description (type END on a new line to finish):")
     lines = []
@@ -45,9 +47,21 @@ def start_cli():
             build_report()
 
         elif choice == "3":
-            with open("data/report_generation.json") as f:
+            report_path = "data/cost_optimization_report.json"
+
+            if not os.path.exists(report_path):
+                print("No report found. Run cost analysis first.")
+                continue
+
+            if os.path.getsize(report_path) == 0:
+                print("Report file is empty. Please rerun cost analysis.")
+                continue
+
+            with open(report_path, "r", encoding="utf-8") as f:
                 report = json.load(f)
-            print(json.dumps(report["recommendations"], indent=2))
+
+            print("\n--- Cost Optimization Recommendations ---\n")
+            print(json.dumps(report.get("recommendations", []), indent=2))
 
         elif choice == "4":
             break

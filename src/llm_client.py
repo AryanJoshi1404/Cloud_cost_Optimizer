@@ -17,7 +17,7 @@ endpoint = HuggingFaceEndpoint(
     repo_id=MODEL,
     huggingfacehub_api_token=HF_API_KEY,
     temperature=0.2,
-    max_new_tokens=800,
+    max_new_tokens=1500,
 )
 
 llm = ChatHuggingFace(llm=endpoint)
