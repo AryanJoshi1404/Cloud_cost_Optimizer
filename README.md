@@ -334,13 +334,3 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 - 🎓 Academic institution for project guidance
 
 ---
-
-<div align="center">
-
-**Made with ❤️ for Cloud Cost Optimization**
-
-⭐ Star this repo if you find it helpful!
-
-[Report Bug](https://github.com/yourusername/cloud-cost-optimizer/issues) • [Request Feature](https://github.com/yourusername/cloud-cost-optimizer/issues)
-
-</div>
