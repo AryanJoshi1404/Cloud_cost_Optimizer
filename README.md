@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #  AI-Powered Cloud Cost Optimizer (LLM-Driven)
 
 An intelligent, menu-driven CLI tool that analyzes cloud project requirements, generates realistic synthetic billing data, and provides actionable **multi-cloud cost optimization recommendations** using Large Language Models (LLMs).
@@ -207,3 +208,147 @@ Azure and GCP-specific billing formats
 Cost visualization dashboards
 
 Real cloud billing ingestion
+=======
+<h1 align="center">Cloud Cost Optimizer</h1>
+
+<p align="center"><strong>AI-powered CLI for generating synthetic cloud bills, analyzing costs, and recommending optimizations.</strong></p>
+
+<p align="center">
+	<img alt="Python" src="https://img.shields.io/badge/python-3.10%2B-blue" />
+	<img alt="License" src="https://img.shields.io/badge/license-MIT-green" />
+</p>
+
+<p>This repository provides a simple, menu-driven CLI that:</p>
+<ul>
+	<li>Turns a free-form project description into a structured JSON profile (LLM-assisted)</li>
+	<li>Generates budget-aware synthetic billing records</li>
+	<li>Performs cost analysis and produces actionable optimization recommendations</li>
+</ul>
+
+<details>
+	<summary><strong>Quicklinks</strong></summary>
+	<ul>
+		<li><a href="#quick-start">Quick Start</a></li>
+		<li><a href="#usage-examples">Usage Examples</a></li>
+		<li><a href="#project-structure">Project Structure</a></li>
+		<li><a href="#development">Development</a></li>
+	</ul>
+</details>
+
+<h2 id="quick-start">Quick Start</h2>
+
+<details>
+<summary>Install dependencies and run (expand for commands)</summary>
+
+```bash
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+
+# Run the CLI (recommended)
+python -m src.cli
+
+# Or run the convenience runner
+python run.py
+```
+
+</details>
+
+<h2 id="usage-examples">Usage Examples</h2>
+
+<details>
+	<summary>Sample interactive session</summary>
+
+	<p>When prompted, paste a short project description. The app produces three core artifacts in <code>data/</code>:</p>
+
+	<ul>
+		<li><code>data/project_profile.json</code> — structured project profile extracted by the LLM</li>
+		<li><code>data/mock_billing.json</code> — synthetic billing records</li>
+		<li><code>data/cost_optimization_report.json</code> — analysis & recommendations</li>
+	</ul>
+
+	<pre><code>
+> python -m src.cli
+1) Provide Project Description
+2) Run Complete Cost Analysis
+3) View Recommendations
+4) Exit
+Select an option: 2
+Processing... (LLM calls may take a few seconds)
+Analysis complete — see data/cost_optimization_report.json
+	</code></pre>
+
+</details>
+
+<h2 id="project-structure">Project Structure</h2>
+
+<table>
+	<tr><th>Path</th><th>Description</th></tr>
+	<tr><td><code>src/</code></td><td>Application modules (CLI, LLM client, generators, analyzers)</td></tr>
+	<tr><td><code>data/</code></td><td>Input/output JSON and sample artifacts</td></tr>
+	<tr><td><code>run.py</code></td><td>Convenience runner for the CLI</td></tr>
+	<tr><td><code>requirements.txt</code></td><td>Python dependencies</td></tr>
+</table>
+
+<h3>Source modules</h3>
+<ul>
+	<li><code>src/cli.py</code> — menu and user interactions</li>
+	<li><code>src/llm_client.py</code> — wrapper for LLM calls</li>
+	<li><code>src/profile_extractor.py</code> — converts free text → JSON profile</li>
+	<li><code>src/bill_generator.py</code> — creates mock billing records</li>
+	<li><code>src/cost_analyzer.py</code> — computes totals and variances</li>
+	<li><code>src/cost_optimizer.py</code> — formulates recommendations</li>
+	<li><code>src/report_builder.py</code> — bundles final report JSON</li>
+</ul>
+
+<h2 id="configuration">Configuration</h2>
+
+<p>Create a <code>.env</code> file in the project root and add any provider keys used by your LLM client. Example:</p>
+
+<pre><code>
+HF_API_KEY=your_huggingface_api_key
+HF_MODEL=meta-llama/Meta-Llama-3-8B-Instruct
+# Optionally set local overrides
+DEBUG=true
+</code></pre>
+
+<h2 id="data-format">Data & Output Formats</h2>
+
+<p>All LLM-generated outputs are validated as JSON. Example artifacts included in <code>data/</code> show expected schemas for:</p>
+
+<ul>
+	<li><code>project_profile.json</code> — project meta, budget, services</li>
+	<li><code>mock_billing.json</code> — list of billing line items with service, amount, region, provider</li>
+	<li><code>cost_optimization_report.json</code> — top-line savings, per-service suggestions</li>
+</ul>
+
+<h2 id="development">Development & Contributing</h2>
+
+<p>Contributions are welcome — create issues or PRs for improvements. Local development steps:</p>
+
+<ol>
+	<li>Create a new branch.</li>
+	<li>Run the CLI and verify outputs in <code>data/</code>.</li>
+	<li>Open a PR describing changes and any new assumptions.</li>
+</ol>
+
+<h2 id="notes">Notes & Limitations</h2>
+
+<ul>
+	<li>This project uses synthetic billing data for demonstration and education.</li>
+	<li>LLM-based outputs should be reviewed; they are validated for JSON correctness but not for business accuracy.</li>
+	<li>Do not commit secrets — <code>.env</code> is excluded by design.</li>
+</ul>
+
+<h2 id="license">License</h2>
+
+<p>MIT — see LICENSE file.</p>
+
+<hr />
+
+<p style="font-size:0.95em">If you'd like, I can also:</p>
+<ul>
+	<li>add a short GIF or image walkthrough (you provide the media),</li>
+	<li>generate a concise badge set for CI / coverage, or</li>
+	<li>open a follow-up PR adding a simple HTML export of the report.</li>
+</ul>
+>>>>>>> 7b19504 (Updated Readme)
